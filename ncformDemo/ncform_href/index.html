@@ -19,7 +19,10 @@
         <ncform :form-schema="inputNumberSchema" form-name="inputNumberSchema" v-model="inputNumberSchema.value"></ncform>
         <el-button @click="submit('inputNumberSchema')">Submit</el-button>
       </el-tab-pane>
-      <el-tab-pane label="角色管理">角色管理</el-tab-pane>
+      <el-tab-pane label="textarea">
+        <ncform :form-schema="textareaSchema" form-name="textareaSchema" v-model="textareaSchema.value"></ncform>
+        <el-button @click="submit('textareaSchema')">Submit</el-button>
+      </el-tab-pane>
       <el-tab-pane label="定时任务补偿">定时任务补偿</el-tab-pane>
     </el-tabs>
     

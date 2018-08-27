@@ -1,4 +1,3 @@
-Vue.use(vueNcform, { extComponents: ncformStdComps });
 var inputSchema = {
   type: "object",
   properties: {
@@ -158,15 +157,42 @@ var inputNumberSchema = {
         label: "基础计数",
         disabled: true
       }
+    },
+    count1: {
+      type: "number",
+      ui: {
+        widget: "input-number",
+        label: "最大，最小值，步长",
+        widgetConfig: {
+          max: 8,
+          step: 2
+        }
+      }
     }
   }
 };
-new Vue({
-  el: "#demo",
-  data: {
-    tabPosition: "left",
-    inputSchema: inputSchema,
-    inputNumberSchema: inputNumberSchema
+var textareaSchema = {
+  type: "object",
+  properties: {
+    message: {
+      type: "string",
+      ui: {
+        label: "基础textarea",
+        widget: "textarea"
+      }
+    }
+  }
+};
+
+export default {
+  name: "HelloWorld",
+  data() {
+    return {
+      tabPosition: "left",
+      inputSchema: inputSchema,
+      inputNumberSchema: inputNumberSchema,
+      textareaSchema: textareaSchema
+    };
   },
   methods: {
     submit(param) {
@@ -180,4 +206,4 @@ new Vue({
       });
     }
   }
-});
+};
