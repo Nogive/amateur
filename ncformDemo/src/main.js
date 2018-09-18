@@ -4,6 +4,8 @@ import Vue from "vue";
 import App from "./App";
 import router from "./router";
 
+/*use elementUI
+
 import vueNcform from "@ncform/ncform";
 
 import Element from "element-ui";
@@ -12,6 +14,8 @@ import ncformStdComps from "@ncform/ncform-theme-elementui";
 
 Vue.use(Element);
 Vue.use(vueNcform, { extComponents: ncformStdComps });
+
+*/
 
 Vue.config.productionTip = false;
 
