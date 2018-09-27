@@ -1,6 +1,6 @@
-# vuetemplate
+# neform-demo
 
-> A Vue.js project
+> ncform project
 
 ## Build Setup
 

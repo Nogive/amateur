@@ -1,7 +1,7 @@
 {
-  "name": "vuetemplate",
+  "name": "neform-demo",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "ncform project",
   "author": "chendan <603446367@qq.com>",
   "private": true,
   "scripts": {
@@ -10,12 +10,11 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "@ncform/ncform": "^0.1.12",
-    "@ncform/ncform-common": "^0.1.12",
-    "@ncform/ncform-theme-elementui": "^0.1.12",
+    "@ncform/ncform": "^0.1.10",
+    "@ncform/ncform-common": "^0.1.10",
+    "@ncform/ncform-theme-elementui": "^0.1.10",
     "axios": "^0.18.0",
-    "element-ui": "^2.4.6",
-    "vant": "^1.2.1",
+    "element-ui": "^2.4.4",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
