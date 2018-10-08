@@ -3,8 +3,9 @@
     <div class="outer">
       <img src="./assets/logo.png">
       <div class="link">
-        <router-link to="/">自定义</router-link>
-        <router-link to="/sample">sample demo</router-link>
+        <router-link to="/">自定义</router-link> |
+        <router-link to="/sample">sample demo</router-link> |
+        <router-link to="/eg">eg</router-link>
       </div>
     </div>
     <router-view></router-view>
