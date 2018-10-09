@@ -10,6 +10,7 @@ import mmDatePicker from "./components/mmDatePicker";
 import mmTimePicker from "./components/mmTimePicker";
 import mmPullSelect from "./components/mmPullSelect";
 import mmMulSelect from "./components/mmMulSelect";
+import mmPhoto from "./components/mmPhoto";
 Vue.use(vueNcform, {
   extComponents: {
     mmInput,
@@ -21,6 +22,7 @@ Vue.use(vueNcform, {
     mmDatePicker,
     mmTimePicker,
     mmPullSelect,
-    mmMulSelect
+    mmMulSelect,
+    mmPhoto
   }
 });

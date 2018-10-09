@@ -17,6 +17,8 @@ import mmDatePicker from "@/components/controls/mmDatePicker";
 import mmTimePicker from "@/components/controls/mmTimePicker";
 import mmPullSelect from "@/components/controls/mmPullSelect";
 import mmMulSelect from "@/components/controls/mmMulSelect";
+import mmPhoto from "@/components/controls/mmPhoto";
+
 Vue.use(vueNcform, { 
   extComponents: {  
     mmInput,
@@ -28,7 +30,8 @@ Vue.use(vueNcform, {
     mmDatePicker,
     mmTimePicker,
     mmPullSelect,
-    mmMulSelect
+    mmMulSelect,
+    mmPhoto
   } 
 });
 export default {
@@ -182,6 +185,26 @@ export default {
                   {
                     value:5,
                     label:'多选5'
+                  }
+                ]
+              }
+            }
+          },
+          photo:{
+            type:'object',
+            ui:{
+              label:'photo 拍照',
+              widget:'mm-photo',
+              widgetConfig:{
+                enumSource:[
+                  {
+                    src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
+                  },
+                  {
+                    src:'https://avatars3.githubusercontent.com/u/24405319?s=40&v=4'
+                  },
+                  {
+                    src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
                   }
                 ]
               }
