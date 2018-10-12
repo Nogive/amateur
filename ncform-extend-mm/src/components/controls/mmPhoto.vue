@@ -48,7 +48,7 @@ export default {
   },
   computed:{
     showTakePhoto:function(){
-      if(this.photoLists.length<maxLen){
+      if(this.mergeConfig.enumSource.length<maxLen){
         return true;
       }else{
         return false;
@@ -58,7 +58,7 @@ export default {
   methods: {
     // you can handle the modelVal before $emit it (before this.$emit('input'))
     _processModelVal (modelVal) {
-      return modelVal
+      return modelVal 
     },
     enlargePhoto(item,index){
       this.currentIndex=index;

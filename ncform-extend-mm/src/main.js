@@ -7,6 +7,7 @@ import Vant from "vant";
 import "vant/lib/vant-css/index.css";
 
 Vue.use(Vant);
+
 Vue.config.productionTip = false;
 
 new Vue({
