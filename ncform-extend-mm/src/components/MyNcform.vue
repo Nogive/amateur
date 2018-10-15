@@ -18,6 +18,8 @@ import mmTimePicker from "@/components/controls/mmTimePicker";
 import mmPullSelect from "@/components/controls/mmPullSelect";
 import mmMulSelect from "@/components/controls/mmMulSelect";
 import mmPhoto from "@/components/controls/mmPhoto";
+import mmLocation from "@/components/controls/mmLocation";
+import mmObject from "@/components/controls/mmObject";
 
 Vue.use(vueNcform, { 
   extComponents: {  
@@ -31,9 +33,79 @@ Vue.use(vueNcform, {
     mmTimePicker,
     mmPullSelect,
     mmMulSelect,
-    mmPhoto
+    mmPhoto,
+    mmObject,
+    mmLocation
   } 
 });
+
+const userSchema={
+  type: "array",
+  items: {
+    type: "object",
+    properties:{
+      name: {
+        type: 'string',
+        ui: {
+          label:'Input 输入框',
+          widget: 'mm-input',
+          placeholder:'请输入姓名'
+        }
+      },
+      count:{
+        type:'number',
+        ui:{
+          label:'input-number 计数',
+          widget:'mm-number'
+        }
+      },
+      ok:{
+        type:'boolean',
+        ui:{
+          label:'radio 是否',
+          widget:'mm-radio'
+        }
+      },
+      pullselect:{
+        type:'string',
+        value:'2',
+        ui:{
+          label:'select 下拉框选择器',
+          widget:'mm-pull-select',
+          widgetConfig:{
+            enumSource:[
+              {
+                value:1,
+                label:'选项1'
+              },
+              {
+                value:2,
+                label:'选项2'
+              },
+              {
+                value:3,
+                label:'选项3'
+              },
+            ]
+          }
+        }
+      }
+    },
+    ui:{
+      label:'南区标准'
+    }
+  },
+  ui: {
+    showLegend:true,
+    label:'object',
+    legend:'SKU配置表',
+    widget: 'mm-object',
+    widgetConfig: {
+      collapsed: false
+    }
+  }
+};
+
 export default {
   data () {
     return {
@@ -192,24 +264,30 @@ export default {
           },
           photo:{
             type:'object',
+            value:[
+              {
+                src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
+              },
+              {
+                src:'https://avatars3.githubusercontent.com/u/24405319?s=40&v=4'
+              },
+              {
+                src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
+              }
+            ],
             ui:{
               label:'photo 拍照',
               widget:'mm-photo',
-              widgetConfig:{
-                enumSource:[
-                  {
-                    src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
-                  },
-                  {
-                    src:'https://avatars3.githubusercontent.com/u/24405319?s=40&v=4'
-                  },
-                  {
-                    src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
-                  }
-                ]
-              }
             }
           },
+          location:{
+            type:'Object',
+            ui:{
+              label:'定位',
+              widget:'mm-location'
+            }
+          },
+          sku:userSchema
         }
       }
     }

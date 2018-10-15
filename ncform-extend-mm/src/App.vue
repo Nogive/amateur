@@ -4,8 +4,9 @@
       <img src="./assets/logo.png">
       <div class="link">
         <router-link to="/">自定义</router-link> |
+        <router-link to="/ncArray">object</router-link> |
         <router-link to="/sample">Try</router-link> |
-        <router-link to="/eg">eg</router-link>
+        <router-link to="/eg">封装成mmform</router-link> 
       </div>
     </div>
     <router-view></router-view>

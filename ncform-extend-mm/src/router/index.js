@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 
 import MyNcform from "@/components/MyNcform";
+import ncArray from "@/components/ncArray";
 import eg from "@/components/eg";
 import HelloWorld from "@/components/HelloWorld";
 export default new VueRouter({
@@ -21,6 +22,11 @@ export default new VueRouter({
       path: "/eg",
       name: "eg",
       component: eg
+    },
+    {
+      path: "/ncArray",
+      name: "ncArray",
+      component: ncArray
     }
   ]
 });

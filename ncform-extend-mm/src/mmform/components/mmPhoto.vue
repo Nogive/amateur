@@ -1,7 +1,7 @@
 <template>
   <div class="photo space">
     <van-row gutter="5">
-      <van-col class="img-box" span="8" v-for="(item,index) in mergeConfig.enumSource" :key="index">
+      <van-col class="img-box" span="8" v-for="(item,index) in photoLists" :key="index">
         <img class="img" :src="item.src" alt="" @click="enlargePhoto(item,index)">
       </van-col>
       <van-col class="img-box" span="8" v-if="showTakePhoto">
@@ -12,7 +12,7 @@
     </van-row>
     <van-popup v-model="showBig" class="b-box">
       <van-swipe :initialSwipe="currentIndex" @change="onChange" id="photoHeight">
-        <van-swipe-item v-for="(item,index) in mergeConfig.enumSource" :key="index" :class="{'currentEl':index==currentIndex}">
+        <van-swipe-item v-for="(item,index) in photoLists" :key="index" :class="{'currentEl':index==currentIndex}">
           <img class="img" :src="item.src" alt="" @click="showBig=false">
           <van-icon class="icon" name="delete" @click="onDetele(item,index)" />
         </van-swipe-item>
@@ -30,25 +30,20 @@ export default {
       showBig:false,
       currentItem:{},
       currentIndex:0,
-      photoLists:[
-        {
-          src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
-        },
-        {
-          src:'https://avatars3.githubusercontent.com/u/24405319?s=40&v=4'
-        },
-        {
-          src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
-        },
-        {
-          src:'http://xfield.oss-cn-hangzhou.aliyuncs.com/100001@1533283255000@E26CA3E0-F4F5-42DE-9E6C-9F4D564E0D65.jpg'
-        }
-      ]
+      photoLists:[]
+    }
+  },
+  created(){
+    this.photoLists=this.value;
+  },
+  watch:{
+    photoLists(){
+      this.modelVal=this.photoLists;
     }
   },
   computed:{
     showTakePhoto:function(){
-      if(this.photoLists.length<maxLen){
+      if(this.value.length<maxLen){
         return true;
       }else{
         return false;
@@ -58,7 +53,7 @@ export default {
   methods: {
     // you can handle the modelVal before $emit it (before this.$emit('input'))
     _processModelVal (modelVal) {
-      return modelVal
+      return modelVal 
     },
     enlargePhoto(item,index){
       this.currentIndex=index;
