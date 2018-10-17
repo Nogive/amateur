@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="outer">
-      <img src="./assets/logo.png">
       <div class="link">
         <router-link to="/">自定义</router-link> |
         <router-link to="/ncArray">object</router-link> |
@@ -30,7 +29,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
   
 }
 .outer{
